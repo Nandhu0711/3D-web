@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aura Dental Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0d5c63;--dk:#004349;--gold:#735a31;--tx:#171c21;--mu:#3f484a;--s1:#f0f4fb;--s2:#eaeef5;--s3:#dee3ea;--cy:#abeef6;--sand:#ffdeac;--bg:#f7f9ff;--sh:0 1px 1px rgba(0,0,0,.05);--sh2:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--bg);color:var(--tx);padding-top:64px;padding-bottom:130px;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:24px 0;position:relative}
+.eb{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);line-height:14px}
+h2{font-size:24px;line-height:32px;font-weight:600;letter-spacing:-.24px;margin-top:8px}
+.sub{font-size:13px;line-height:20px;color:var(--mu);letter-spacing:.065px;margin-top:4px}
+.hd{margin-bottom:16px}
+.card{background:#fff;border-radius:16px;box-shadow:var(--sh);padding:16px}
+.btn{display:flex;align-items:center;justify-content:center;gap:6px;height:48px;border-radius:12px;font-weight:600;font-size:12px;letter-spacing:.72px;cursor:pointer;border:0;font-family:inherit;width:100%}
+.btn.p{background:var(--teal);color:#fff;font-size:14px;letter-spacing:.56px;box-shadow:var(--sh2)}
+.btn.s{background:var(--s1);color:var(--tx)}
+.btn img{width:12px;height:12px}
+/* header */
+header{position:fixed;top:0;left:0;right:0;height:64px;z-index:50;background:rgba(247,249,255,.8);backdrop-filter:blur(12px);box-shadow:0 1px 8px rgba(0,0,0,.04)}
+header .w{height:64px;display:flex;align-items:center;justify-content:space-between}
+.hl,.hr{display:flex;align-items:center;gap:8px}
+.ib{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:none;border:0;cursor:pointer}
+.logo{width:32px;height:32px;object-fit:contain}
+.bk{display:flex;align-items:center;gap:4px;height:44px;padding:0 16px;border-radius:99px;background:var(--teal);color:#fff;font-size:12px;font-weight:600;letter-spacing:.72px;filter:drop-shadow(0 4px 8px rgba(13,92,99,.15))}
+.us{width:32px;height:32px;border-radius:50%;background:var(--dk);display:flex;align-items:center;justify-content:center}
+.us img{width:12px}
+/* hero */
+.hero{padding:24px 0 40px;overflow:hidden}
+.b1,.b2{position:absolute;border-radius:50%;filter:blur(32px);z-index:0}
+.b1{width:320px;height:320px;right:-64px;top:-48px;background:rgba(255,222,172,.3)}
+.b2{width:288px;height:288px;left:-80px;top:33%;background:rgba(171,238,246,.2)}
+.hero .w{position:relative;z-index:1;display:flex;flex-direction:column;gap:16px}
+.badge{align-self:flex-start;display:flex;align-items:center;gap:8px;padding:6px 14px;background:var(--s1);border-radius:99px;font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--dk);text-transform:uppercase;box-shadow:var(--sh)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--teal)}
+h1{font-size:28px;line-height:36px;font-weight:300;letter-spacing:-.7px}
+h1 b{display:block;font-weight:500;color:var(--dk)}
+.lead{font-size:15px;line-height:24px;color:var(--mu);margin-top:8px}
+.cta{display:flex;flex-direction:column;gap:4px;padding-top:4px}
+.trust{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:8px;box-shadow:var(--sh)}
+.trust span{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--mu)}
+.trust i{width:1px;height:12px;background:rgba(191,200,201,.4)}
+.trust img{height:15px}
+.photo{position:relative;border-radius:24px;overflow:hidden;background:var(--s2);box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+.photo>img{width:100%;height:350px;object-fit:cover}
+.pill{position:absolute;left:12px;right:12px;bottom:12px;display:flex;align-items:center;justify-content:space-between;padding:12px;border-radius:16px;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+.pill>div{display:flex;align-items:center;gap:10px}
+.pill .c{width:32px;height:32px;border-radius:50%;background:rgba(171,238,246,.5);display:flex;align-items:center;justify-content:center}
+.pill .c img{width:15px}
+.pill small{display:block;font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--gold);text-transform:uppercase;line-height:14px}
+.pill strong{font-size:12px;font-weight:600;letter-spacing:.72px}
+.pill a{background:var(--teal);color:#fff;font-size:10px;font-weight:600;letter-spacing:.8px;padding:6px 12px;border-radius:8px}
+/* stats */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.st{background:#fff;border-radius:16px;padding:16px;box-shadow:var(--sh);min-height:110px;display:flex;flex-direction:column;justify-content:space-between}
+.st b{font-size:24px;line-height:32px;color:var(--dk);letter-spacing:-.24px}
+.st strong{display:block;font-size:18px;line-height:26px;font-weight:600}
+.st span{font-size:13px;line-height:20px;color:var(--mu)}
+.stars{display:flex;gap:4px}.stars img{width:13px;height:13px}
+.st .rt{font-size:20px;line-height:28px;font-weight:700;margin-top:8px;display:block}
+/* treatments */
+.tg{display:grid;gap:8px}
+.tc{display:flex;flex-direction:column;gap:4px;padding-bottom:19px}
+.tc .top{display:flex;justify-content:space-between;align-items:flex-start}
+.ic{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.num{font-family:'Liberation Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.72px;color:var(--gold)}
+.tc h3{font-size:18px;line-height:26px;font-weight:600;padding-top:8px}
+.tc p{font-size:13px;line-height:20px;color:var(--mu)}
+.lm{display:flex;align-items:center;gap:4px;padding-top:8px;font-size:10px;font-weight:600;letter-spacing:.8px;color:var(--teal)}
+.lm img{width:11px}
+/* why */
+.why{background:var(--s1);border-radius:24px;padding:16px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:16px}
+.why .img{border-radius:16px;overflow:hidden;box-shadow:var(--sh2)}
+.why .img img{width:100%;height:179px;object-fit:cover;object-position:center 30%}
+.fp{display:flex;flex-direction:column;gap:8px}
+.f{display:flex;gap:8px;background:#fff;border-radius:12px;padding:8px;box-shadow:var(--sh)}
+.f .n{flex:0 0 32px;height:32px;margin-top:2px;border-radius:50%;background:rgba(171,238,246,.4);color:var(--teal);font:700 10px 'Liberation Mono',monospace;letter-spacing:.8px;display:flex;align-items:center;justify-content:center}
+.f h3{font-size:18px;line-height:26px;font-weight:600}
+.f p{font-size:13px;line-height:20px;color:var(--mu)}
+.btn.g{background:var(--s3);color:var(--tx)}
+/* journey */
+.jh{text-align:center}
+.steps{display:flex;flex-direction:column;gap:16px;max-width:760px;margin:0 auto}
+.step{display:flex;gap:16px}
+.step .l{display:flex;flex-direction:column;align-items:center;flex:0 0 48px}
+.step .c{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;box-shadow:var(--sh2)}
+.step .ln{width:2px;height:64px;margin:4px 0;background:rgba(191,200,201,.5)}
+.step h3{font-size:18px;line-height:26px;font-weight:600;padding-top:4px}
+.step p{font-size:13px;line-height:20px;color:var(--mu);margin-top:4px}
+/* transformation */
+.tr{background:#fff;border-radius:24px;padding:16px;box-shadow:var(--sh2);display:flex;flex-direction:column;gap:8px;max-width:760px;margin:0 auto}
+.ba{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden}
+.ba img.af,.ba .bf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .bf{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+.tag{position:absolute;top:12px;background:rgba(23,28,33,.7);color:#fff;font-size:10px;font-weight:700;letter-spacing:.8px;padding:4px 8px;border-radius:4px;z-index:2}
+.dv{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);box-shadow:var(--sh2);z-index:3;pointer-events:none}
+.dv span{position:absolute;top:50%;left:50%;width:14px;height:28px;border-radius:99px;background:var(--teal);transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}
+.dv img{width:12px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.pil{display:flex;gap:4px;padding-top:11px}
+.pil div{flex:1;background:var(--s1);border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:11px;font-size:10px;font-weight:600;letter-spacing:.8px;min-height:56px}
+.pil img{height:15px}
+/* team */
+.tmg{display:grid;gap:16px}
+.dr{background:#fff;border-radius:24px;padding:16px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:8px}
+.dp{position:relative;border-radius:16px;overflow:hidden;background:var(--s2)}
+.dp img{width:100%;height:318px;object-fit:cover}
+.dp span{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.9);backdrop-filter:blur(2px);color:var(--dk);font-size:10px;font-weight:600;letter-spacing:.8px;padding:4px 12px;border-radius:99px}
+.dr .r1{display:flex;justify-content:space-between;align-items:center}
+.dr h3{font-size:18px;line-height:26px;font-weight:600}
+.dr .r1 small{font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--gold)}
+.dr .role{font-size:13px;line-height:20px;font-weight:500;color:var(--teal)}
+.dr p{font-size:13px;line-height:20px;color:var(--mu);padding-top:6px}
+.dr a{display:flex;align-items:center;gap:6px;padding-top:10px;font-size:12px;font-weight:600;letter-spacing:.72px;color:var(--dk)}
+.dr a img{height:8px}
+/* reviews */
+.rg{display:grid;gap:8px}
+.rv p{font-size:15px;line-height:24px;margin:4px 0}
+.rv .ft{display:flex;justify-content:space-between;align-items:center;padding-top:4px}
+.rv .ft b{font-size:18px;font-weight:600}
+.rv .ft span{display:flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:.8px;color:var(--teal)}
+.rv .ft img{width:12px}
+/* cta card */
+.dark{background:var(--dk);border-radius:24px;padding:40px 24px 24px;position:relative;overflow:hidden;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);display:flex;flex-direction:column;gap:16px;max-width:760px;margin:0 auto}
+.dark:before{content:"";position:absolute;right:-48px;top:-48px;width:192px;height:192px;border-radius:50%;background:var(--teal);opacity:.4;filter:blur(20px)}
+.dark>*{position:relative}
+.dark h2{font-size:32px;line-height:40px;font-weight:300;letter-spacing:-.48px;color:#fff;margin:4px 0}
+.dark h2 b{display:block;font-weight:600;color:var(--cy)}
+.dark .eb{color:var(--sand)}
+.dark p.t{font-size:15px;line-height:24px;color:rgba(255,255,255,.8)}
+.dark .a{display:flex;flex-direction:column;gap:4px}
+.dark .btn.y{background:var(--sand);color:#281900;font-size:14px;letter-spacing:.56px;box-shadow:var(--sh2)}
+.dark .btn.c{background:var(--teal);color:#fff}
+.dark .btn.c img{width:14px}
+.dark ul{list-style:none;display:flex;flex-direction:column;gap:6px;padding-top:4px}
+.dark li{display:flex;align-items:center;gap:8px;font-size:13px;line-height:20px;color:rgba(255,255,255,.7)}
+.dark li img{width:11px}
+/* form */
+form{background:#fff;border-radius:24px;padding:16px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:8px;max-width:560px;margin:0 auto}
+.fl{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+.fl label{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--mu);line-height:14px}
+.in{position:relative}
+.in img{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:13px}
+.in input{width:100%;height:48px;border:2px solid transparent;border-radius:12px;background:var(--s1);padding:0 16px 0 40px;font:400 15px 'Manrope',sans-serif;color:var(--tx);outline:none}
+.in input::placeholder{color:#9ca3af}
+.in input:focus{border-color:var(--teal);background:#fff}
+.msg{display:none;font-size:13px;line-height:20px;font-weight:600;padding:10px 12px;border-radius:12px}
+.msg.ok{display:block;background:#e3f6f2;color:var(--dk)}
+.msg.er{display:block;background:#fdecea;color:#9b2c2c}
+.btn:disabled{opacity:.7;cursor:wait}
+.tn{display:flex;align-items:center;gap:8px;padding-top:4px;font-size:10px;font-weight:700;letter-spacing:.8px;line-height:12.5px;color:#6f797a}
+.tn img{height:14px}
+/* location */
+.map{background:#fff;border-radius:24px;padding:16px;box-shadow:0 1px 2px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:8px;max-width:760px;margin:0 auto}
+.mp{position:relative;height:192px;border-radius:16px;overflow:hidden;background:var(--s2);display:flex;align-items:center;justify-content:center;box-shadow:inset 0 2px 4px rgba(0,0,0,.05)}
+.mp>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}
+.mp span{position:relative;display:flex;align-items:center;gap:8px;background:var(--teal);color:#fff;padding:8px 16px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:.72px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+.mp span img{height:15px}
+.ct{display:flex;flex-direction:column;gap:8px;padding-top:4px}
+.ct div{display:flex;gap:8px}
+.ct div>img{height:17px;margin-top:5px;flex:0 0 auto}
+.ct h3{font-size:18px;line-height:26px;font-weight:600}
+.ct p{font-size:13px;line-height:20px;color:var(--mu)}
+/* footer */
+footer{background:var(--dk);color:#fff;margin-top:16px;padding:40px 0 24px;border-radius:24px 24px 0 0}
+.fb{display:flex;align-items:center;gap:4px;font-size:18px;font-weight:600}
+.fb img{width:32px;height:32px;object-fit:contain;background:#fff;border-radius:8px;padding:2px}
+footer .d{font-size:13px;line-height:20px;color:rgba(255,255,255,.7);margin-top:4px}
+.fn{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:16px 0}
+.fn h4{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--sand);margin-bottom:4px}
+.fn a{display:block;font-size:13px;line-height:20px;padding:2px 0;color:rgba(255,255,255,.8)}
+.so{display:flex;gap:12px;padding:8px 0 16px}
+.so a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.cp{font-size:11px;color:rgba(255,255,255,.6);display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.cp div{display:flex;gap:16px}
+/* bottom nav */
+nav.bn{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(247,249,255,.95);backdrop-filter:blur(12px);box-shadow:0 -2px 12px rgba(0,0,0,.06);padding-bottom:env(safe-area-inset-bottom,0)}
+.bn .r1{display:flex;gap:8px;padding:6px 20px 0;max-width:1080px;margin:0 auto}
+.bn .r1 a{flex:1;height:40px;border-radius:99px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:.72px}
+.bn .r1 .c{background:var(--s1);color:var(--dk);flex:.7}
+.bn .r1 .b{background:var(--teal);color:#fff}
+.bn .r2{display:flex;justify-content:space-around;max-width:1080px;margin:0 auto}
+.bn .r2 a{width:64px;height:44px;margin:2px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:var(--mu);gap:1px}
+.bn .r2 a i{font-style:normal;font-size:14px;line-height:15px}
+.bn .r2 a.on{color:var(--teal)}
+@media(min-width:768px){
+h1{font-size:44px;line-height:52px}h2{font-size:30px;line-height:38px}
+.hero .w{display:grid;grid-template-columns:1.1fr 1fr;column-gap:40px;align-items:center}
+.hero .w>div:first-child{display:flex;flex-direction:column;gap:16px}
+.stats{grid-template-columns:repeat(4,1fr)}
+.tg{grid-template-columns:repeat(3,1fr)}
+.fp{display:grid;grid-template-columns:1fr 1fr}
+.why .img img{height:300px}
+.steps{flex-direction:row;max-width:none}.step{flex:1;flex-direction:column}.step .l{flex-direction:row;width:100%}.step .ln{width:auto;flex:1;height:2px;margin:0 8px}
+.tmg{grid-template-columns:1fr 1fr}
+.rg{grid-template-columns:repeat(3,1fr)}
+.fn{max-width:420px}
+}
+@media(max-width:360px){.trust span{font-size:9px;letter-spacing:.4px}}
+</style>
+</head>
+<body>
+
+<header><div class="w">
+  <div class="hl"><button class="ib" aria-label="Menu"><img data-s="a/478c0.svg" width="18" height="12" alt=""></button><img class="logo" data-s="a/7eb62.png" alt="Aura Dental Studio"></div>
+  <div class="hr"><a class="bk" href="#book"><img data-s="a/6952f.svg" width="12" alt="">Book Now</a><span class="us"><img data-s="a/59e02.svg" alt=""></span></div>
+</div></header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="b1"></div><div class="b2"></div>
+  <div class="w">
+    <div>
+      <div class="badge"><span class="dot"></span>Trusted Dental Care</div>
+      <div><h1>A Healthier Smile.<b>A More Confident You.</b></h1>
+      <p class="lead">Modern, gentle, personalized dental care designed around your comfort, your health, and your smile.</p></div>
+      <div class="cta">
+        <a class="btn p" data-pay href="#" style="justify-content:space-between;padding:0 24px;height:48px">Book an Appointment<img data-s="h/60251.svg" alt="" style="width:13px;height:13px"></a>
+        <a class="btn s" href="#treatments">Explore Treatments<img data-s="h/b7227.svg" alt="" style="width:13px;height:9px"></a>
+      </div>
+      <div class="trust">
+        <span><img data-s="h/094c8.svg" alt="">Experienced</span><i></i>
+        <span><img data-s="h/6d73b.svg" alt="">Modern Tech</span><i></i>
+        <span><img data-s="h/00d0d.svg" alt="">Gentle Care</span>
+      </div>
+    </div>
+    <div class="photo">
+      <img data-s="h/2006d.png" alt="Radiant smile in clinic wellness suite">
+      <div class="pill"><div><span class="c"><img data-s="h/8ea9d.svg" alt=""></span><span><small>Next Available</small><strong>Today · 4:30 PM</strong></span></div><a href="#book">Reserve</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:16px 0"><div class="w"><div class="stats">
+  <div class="st"><b>10+</b><div><strong>Years</strong><span>Clinical Expertise</span></div></div>
+  <div class="st"><b>5,000+</b><div><strong>Happy Patients</strong><span>Smiles Perfected</span></div></div>
+  <div class="st"><b>15+</b><div><strong>Treatments</strong><span>Comprehensive Care</span></div></div>
+  <div class="st" style="justify-content:flex-start;gap:6px"><div class="stars" id="stars"></div><div style="padding-top:0"><span class="rt" style="color:var(--tx)">4.9 / 5</span><span>Verified Reviews</span></div></div>
+</div></div></section>
+
+<!-- TREATMENTS -->
+<section id="treatments"><div class="w">
+  <div class="hd"><div class="eb" style="display:flex;align-items:center;gap:6px"><img data-s="t/01939.svg" width="12" alt="">Our Specializations</div>
+  <h2>Everything Your Smile Needs</h2>
+  <p class="sub">From preventive care to complete smile transformations, get personalized treatment under one roof.</p></div>
+  <div class="tg" id="tg"></div>
+</div></section>
+
+<!-- WHY -->
+<section id="why"><div class="w"><div class="why">
+  <div><div class="eb">Why Patients Choose Us</div><h2>Dentistry Designed Around You.</h2></div>
+  <div class="img"><img data-s="w/6dde8.png" alt="Doctor consulting warmly with patient using digital tablet"></div>
+  <div class="fp" id="fp"></div>
+  <a class="btn g" href="#book">Why Choose Us<img data-s="w/ab9f9.svg" alt=""></a>
+</div></div></section>
+
+<!-- JOURNEY -->
+<section><div class="w">
+  <div class="hd jh"><div class="eb">Seamless Experience</div><h2>Your Care Journey</h2><p class="sub">Three simple steps to the healthiest smile of your life.</p></div>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<!-- TRANSFORMATION -->
+<section><div class="w">
+  <div class="hd"><div class="eb">Aesthetic Results</div><h2>Your Smile. Your Transformation.</h2><p class="sub">Minimally invasive composite bonding and bespoke porcelain veneers.</p></div>
+  <div class="tr">
+    <div class="ba" id="ba">
+      <img class="af" data-s="x/a6e02.png" alt="After">
+      <span class="tag" style="right:12px">AFTER</span>
+      <div class="bf" id="bf"><img data-s="x/83581.png" alt="Before"><span class="tag" style="left:12px">BEFORE</span></div>
+      <div class="dv" id="dv"><span><img data-s="x/a6860.svg" alt=""></span></div>
+      <input type="range" min="0" max="100" value="50" id="rg" aria-label="Compare before and after dental transformation">
+    </div>
+    <div class="pil">
+      <div><img data-s="x/f4910.svg" alt="">Personalized</div>
+      <div><img data-s="x/2d62d.svg" alt="">Natural Look</div>
+      <div><img data-s="x/3afcd.svg" alt="">Confidence</div>
+    </div>
+    <a class="btn p" href="#book" style="font-size:12px;letter-spacing:.72px;box-shadow:none">Start Your Smile Journey<img data-s="x/b0702.svg" alt=""></a>
+  </div>
+</div></section>
+
+<!-- TEAM -->
+<section id="team"><div class="w">
+  <div class="hd"><div class="eb">Clinical Excellence</div><h2>Meet Your Care Team</h2><p class="sub">World-class dental artisans dedicated to pain-free, conservative treatments.</p></div>
+  <div class="tmg">
+    <div class="dr"><div class="dp"><img data-s="m/d7bbb.png" alt="Dr. Elena Rostova lead cosmetic dentist"><span>14+ Years Experience</span></div>
+      <div class="r1"><h3>Dr. Elena Rostova</h3><small>LEAD DENTIST</small></div>
+      <div class="role">Cosmetic Dentistry &amp; Orthodontics</div>
+      <p>Specialized in minimally invasive aesthetics, porcelain rehabilitation, and gentle aligner therapy. Passionate about empowering patient confidence through subtle, natural transformations.</p>
+      <a href="#book">Book Consultation with Dr. Rostova<img data-s="m/6c6b7.svg" alt=""></a></div>
+    <div class="dr"><div class="dp"><img data-s="m/493a9.png" alt="Dr. Marcus Vance" style="object-position:30% 0"><span>11+ Years Experience</span></div>
+      <div class="r1"><h3>Dr. Marcus Vance</h3><small>SPECIALIST</small></div>
+      <div class="role">Implantologist &amp; Oral Surgeon</div>
+      <p>Harvard Dental School alumnus focusing on computer-guided, painless implant surgery and full-arch restorative solutions for long-term health.</p>
+      <a href="#book">Book Consultation with Dr. Vance<img data-s="m/6c6b7.svg" alt=""></a></div>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews"><div class="w">
+  <div class="hd"><div class="eb">Patient Testimonials</div><h2>Real Patients. Real Experiences.</h2></div>
+  <div class="rg" id="rg2"></div>
+</div></section>
+
+<!-- CTA DARK -->
+<section style="padding:16px 0"><div class="w"><div class="dark">
+  <div><div class="eb">Start Today</div><h2>Ready to Love<b>Your Smile?</b></h2>
+  <p class="t">Take the first step toward healthier teeth and greater confidence with our gentle clinical team.</p></div>
+  <div class="a"><a class="btn y" href="#book">Book Your Appointment<img data-s="c/e220d.svg" alt=""></a>
+  <a class="btn c" href="tel:+15552348899"><img data-s="c/44c51.svg" alt="">Call: (555) 234-8899</a></div>
+  <ul><li><img data-s="c/adcf1.svg" alt="">Available Monday–Saturday</li><li><img data-s="c/adcf1.svg" alt="">Easy appointment scheduling</li><li><img data-s="c/adcf1.svg" alt="">Complimentary digital smile scan</li></ul>
+</div></div></section>
+
+<!-- FORM -->
+<section id="book"><div class="w">
+  <div class="hd"><div class="eb">Reservations</div><h2>Let's Take Care of Your Smile</h2><p class="sub">Fill out the quick form below and our studio concierge will confirm your time promptly.</p></div>
+  <form id="f" novalidate>
+    <div class="fl"><label for="name">Full Name</label><div class="in"><img data-s="f/de04e.svg" alt=""><input id="name" name="name" type="text" placeholder="Elena Vance" autocomplete="name" required></div></div>
+    <div class="fl"><label for="phone">Phone Number</label><div class="in"><img data-s="f/0825b.svg" alt=""><input id="phone" name="phone" type="tel" placeholder="(555) 000-0000" autocomplete="tel" required></div></div>
+    <div class="fl"><label for="email">Email Address</label><div class="in"><img data-s="f/8ff76.svg" alt=""><input id="email" name="email" type="email" placeholder="elena@example.com" autocomplete="email" required></div></div>
+    <div class="msg" id="msg" role="status"></div>
+    <button class="btn p" id="sb" type="submit" style="margin-top:8px">Request Appointment<img data-s="f/03d99.svg" alt=""></button>
+    <div class="tn"><img data-s="f/40ba4.svg" alt="">Your data is private and only used to respond to this request.</div>
+  </form>
+</div></section>
+
+<!-- LOCATION -->
+<section id="visit"><div class="w">
+  <div class="hd"><div class="eb">San Francisco Studio</div><h2>Location &amp; Hours</h2></div>
+  <div class="map">
+    <div class="mp"><img data-s="l/f6341.png" alt=""><span><img data-s="l/db2a8.svg" alt="">Aura Dental Studio</span></div>
+    <div class="ct">
+      <div><img data-s="l/02051.svg" alt=""><span><h3>Address</h3><p>450 Sutter Wellness Plaza, Suite 800<br>San Francisco, CA 94108</p></span></div>
+      <div><img data-s="l/dc3ec.svg" alt=""><span><h3>Clinic Hours</h3><p>Mon – Fri: 8:00 AM – 6:30 PM<br>Saturday: 9:00 AM – 3:00 PM<br>Sunday: Closed for Sanctuary Care</p></span></div>
+      <div><img data-s="l/b1c08.svg" alt=""><span><h3>Inquiries</h3><p>(555) 234-8899 · concierge@auradental.com</p></span></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="w">
+  <div class="fb"><img data-s="a/7eb62.png" alt="">&nbsp;Aura Dental Studio</div>
+  <p class="d">Modern dental care focused on healthier smiles, gentle techniques, and confident patients.</p>
+  <div class="fn">
+    <div><h4>SERVICES</h4><a href="#treatments">General Care</a><a href="#treatments">Teeth Whitening</a><a href="#treatments">Dental Implants</a><a href="#treatments">Clear Aligners</a></div>
+    <div><h4>STUDIO</h4><a href="#team">Smile Transformations</a><a href="#book">Book Online</a><a href="tel:+15552348899">Emergency Line</a><a href="#reviews">Patient Stories</a></div>
+  </div>
+  <div class="so"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="YouTube">▶</a></div>
+  <div class="cp"><span>© 2025 Aura Dental Studio. All rights reserved.</span><div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div></div>
+</div></footer>
+
+<nav class="bn">
+  <div class="r1"><a class="c" href="tel:+15552348899">☎ Call Now</a><a class="b" href="#book">Book Appointment</a></div>
+  <div class="r2"><a class="on" href="#home"><i>⌂</i>Home</a><a href="#treatments"><i>✚</i>Treatments</a><a href="#team"><i>☺</i>Doctors</a><a href="#reviews"><i>★</i>Reviews</a><a href="#visit"><i>⌖</i>Visit</a></div>
+</nav>
+
+<script>
+/* ===== CONFIG ===== */
+var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyRNbMCzLsfq62IohczjoZFvzlXOzHiccOdSY3hvQrGaWBwR12oImv5yrb40BSoMA_aNw/exec";
+var PAYMENT_URL = "https://payments.cashfree.com/forms/getaudit";
+
+/* ===== Figma asset resolver ===== */
+var B="https://www.figma.com/api/mcp/asset/",P={a:"97f5a117-1f1b-41c7-9956-2955084cd23f",h:"7f8c3762-e900-4654-968e-097a2372f08b",s:"0467d235-7096-41cb-8b92-4cdaf774bead",t:"0d4e5559-be10-4fe7-9b7f-cf6e630f956d",w:"019e0e9f-27e0-49bb-944f-d683c202ae3a",x:"012b8739-fa34-41a7-b9b5-3c4eb48fde63",m:"23cd32e2-90e2-49b0-8974-9c80a49bce1c",r:"a0773d3c-4298-44be-9594-3465a7b01674",c:"70093a43-52b6-46a0-b16b-c86455f6f2b9",f:"15e49d7f-13fe-46ac-96dc-3f9a8bd7e1c8",l:"fb3ed4e5-4915-4a43-ab3a-846aa5f33f90"};
+function I(k){return B+P[k[0]]+k.slice(1)}
+function arrow(){return '<img src="'+I("t/e0e17.svg")+'" alt="">'}
+
+/* ===== Repeated content ===== */
+var star=I("s/225bf.svg");
+document.getElementById("stars").innerHTML=[1,2,3,4,5].map(function(){return '<img src="'+star+'" alt="">'}).join("");
+
+var T=[["General Dentistry","Complete preventive exams, gentle cleanings, and proactive routine dental health management.","t/467e6.svg","rgba(171,238,246,.4)"],
+["Teeth Whitening","Professional chairside whitening and bespoke take-home kits formulated for zero sensitivity.","t/de95b.svg","rgba(253,219,167,.5)"],
+["Dental Implants","Permanent, biocompatible, and natural-looking solutions to replace missing teeth seamlessly.","t/5d5d6.svg","rgba(171,238,246,.4)"],
+["Braces & Clear Aligners","Discreet Invisalign clear aligners and tailored orthodontics designed for confident, straighter results.","t/ad3ce.svg","rgba(253,219,167,.5)"],
+["Root Canal Treatment","Comfort-first microscopic endodontics that save natural teeth gently and efficiently.","t/4600e.svg","rgba(171,238,246,.4)"],
+["Cosmetic Dentistry","Ultra-thin handcrafted porcelain veneers, composite bonding, and bespoke aesthetic smile makeovers.","t/a2114.svg","rgba(253,219,167,.5)"]];
+document.getElementById("tg").innerHTML=T.map(function(t,i){return '<div class="card tc"><div class="top"><div class="ic" style="background:'+t[3]+'"><img src="'+I(t[2])+'" style="height:20px" alt=""></div><span class="num">0'+(i+1)+'</span></div><h3>'+t[0].replace("&","&amp;")+'</h3><p>'+t[1]+'</p><a class="lm" href="#book">Learn More '+arrow()+'</a></div>'}).join("");
+
+var F=[["Gentle, Comfortable Care","We prioritize your ease throughout every visit with sedation options, noise-canceling acoustics, and calm pacing."],
+["Modern Technology","3D intraoral digital scanners, CBCT precision imaging, and drill-less laser therapy for exact treatment."],
+["Personalized Treatment","Every smile is unique. We co-create a conservative master plan tailored to your health goals."],
+["Transparent Pricing","Clear estimates, no hidden fees, and flexible zero-interest concierge financing options."]];
+document.getElementById("fp").innerHTML=F.map(function(f,i){return '<div class="f"><span class="n">0'+(i+1)+'</span><div><h3>'+f[0]+'</h3><p>'+f[1]+'</p></div></div>'}).join("");
+
+var S=[["Book in Minutes","Select your preferred date and time online. We confirm instantly and send digital intake forms to save you time.","var(--teal)","#fff"],
+["Meet Your Specialist","Enjoy a relaxed consultation over tea or mineral water. We examine 3D scans together and discuss your vision.","var(--gold)","#fff"],
+["Smile with Confidence","Experience pain-free clinical care, leave with aftercare support, and celebrate long-term oral vitality.","var(--cy)","var(--dk)"]];
+document.getElementById("steps").innerHTML=S.map(function(s,i){return '<div class="step"><div class="l"><div class="c" style="background:'+s[2]+';color:'+s[3]+'">'+(i+1)+'</div>'+(i<2?'<div class="ln"></div>':'')+'</div><div><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div></div>'}).join("");
+
+var R=[["I was nervous about visiting the dentist, but the entire team made me feel comfortable from the moment I walked in.","Sarah Jenkins"],
+["The Invisalign journey with Dr. Rostova completely transformed my smile. Truly boutique care with zero stress.","Michael Chen"],
+["Clean, calm, and pain-free. It feels like a high-end spa rather than a clinical dental office. I cannot recommend Aura enough.","Amanda Brooks"]];
+var five=[1,2,3,4,5].map(function(){return '<img src="'+star+'" alt="">'}).join("");
+document.getElementById("rg2").innerHTML=R.map(function(r){return '<div class="card rv"><div class="stars">'+five+'</div><p>“'+r[0]+'”</p><div class="ft"><b>'+r[1]+'</b><span><img src="'+I("r/f7543.svg")+'" alt="">Verified Patient</span></div></div>'}).join("");
+
+/* ===== Resolve data-s images ===== */
+Array.prototype.forEach.call(document.querySelectorAll("[data-s]"),function(el){el.src=I(el.getAttribute("data-s"))});
+
+/* ===== Payment link ===== */
+Array.prototype.forEach.call(document.querySelectorAll("[data-pay]"),function(a){a.href=PAYMENT_URL;a.target="_blank";a.rel="noopener"});
+
+/* ===== Before/After slider ===== */
+var rg=document.getElementById("rg");
+rg.addEventListener("input",function(){var v=rg.value;document.getElementById("bf").style.clipPath="inset(0 "+(100-v)+"% 0 0)";document.getElementById("dv").style.left=v+"%"});
+
+/* ===== Form -> Google Sheets (no-cors GET) ===== */
+var form=document.getElementById("f"),msg=document.getElementById("msg"),sb=document.getElementById("sb");
+function showSuccess(){msg.className="msg ok";msg.textContent="Thank you! Your request has been received. Our concierge will contact you shortly.";form.reset();sb.disabled=false}
+function showError(){msg.className="msg er";msg.textContent="Something went wrong. Please try again or call (555) 234-8899.";sb.disabled=false}
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  var name=form.name.value.trim(),email=form.email.value.trim(),phone=form.phone.value.trim();
+  if(!name||!email||!phone||!/^\S+@\S+\.\S+$/.test(email)){msg.className="msg er";msg.textContent="Please enter a valid name, phone number, and email.";return}
+  sb.disabled=true;msg.className="msg";
+  var url=SCRIPT_URL+"?"+new URLSearchParams({name:name,email:email,phone:phone});
+  fetch(url,{method:"GET",mode:"no-cors"}).then(function(){showSuccess()}).catch(function(){showError()});
+});
+</script>
+</body>
+</html>
